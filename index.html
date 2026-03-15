@@ -9,41 +9,13 @@
   <meta property="og:description" content="Get the freshest seasonal vegetables delivered from farm to door in 24 hours." />
   <link rel="icon" type="image/png" href="./images/favicon.ico"/>
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./css/buttons.css" />
 </head>
 <body>
 
-  <!-- ── NAVBAR ── -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-        <a href="./index.html" class="nav-logo">
-        <div class="nav-logo-icon">
-        <img src="./images/app-icon.png" alt="Bajaru Logo">
-        </div>
-        Bajaru
-        </a>
-      <ul class="nav-links">
-        <li><a href="./index.html" class="active">Home</a></li>
-        <li><a href="./about.html">About</a></li>
-        <li><a href="./careers.html">Careers</a></li>
-        <li><a href="./download.html">Download</a></li>
-      </ul>
-      <div class="nav-cta">
-        <a href="./download.html" class="btn btn-primary btn-sm">Get the App</a>
-      </div>
-      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- Mobile menu -->
-  <div class="nav-mobile" id="mobileMenu">
-    <a href="./index.html" class="active">Home</a>
-    <a href="./about.html">About</a>
-    <a href="./careers.html">Careers</a>
-    <a href="./download.html">Download</a>
-    <a href="./download.html" class="btn btn-primary">Get the App</a>
-  </div>
+  <!-- ── NAVBAR (loaded from components) ── -->
+  <div id="navbar-placeholder"></div>
+  <div id="mobile-menu-placeholder"></div>
 
   <!-- ── HERO ── -->
   <section class="hero page-top">
@@ -60,7 +32,7 @@
           We partner with local farms to bring you the freshest, most nutritious vegetables — harvested this morning and on your table tonight.
         </p>
         <div class="hero-actions">
-          <a href="./download.html" class="btn btn-primary btn-lg">Download the App</a>
+          <a href="./download.html" class="btn btn-primary btn-lg"><svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download the App</a>
           <a href="./about.html" class="btn btn-outline btn-lg">Learn more</a>
         </div>
         <div class="hero-trust">
@@ -135,9 +107,9 @@
           <p>Every batch is tested for pesticides. We publish full reports so you know exactly what you eat.</p>
         </div>
         <div class="feature-card reveal reveal-delay-3">
-          <div class="feature-icon">📱</div>
+          <div class="feature-icon">🤖</div>
           <h3>AI-Powered</h3>
-          <p>Browse seasonal selections, schedule recurring deliveries, and track your order live — all in the app.</p>
+          <p>Automate your entire shopping experience using just your voice. Browse, search, add items, check prices, add your address — everything by speaking in your native language. Bajaru does it all for you.</p>
         </div>
       </div>
 
@@ -168,25 +140,25 @@
         <span class="section-label">How it works</span>
         <h2 class="section-title">Farm to table in three steps</h2>
         <p class="section-subtitle" style="margin:0 auto;">
-          Simple, transparent, and fast — from clicking order to tasting freshness.
+          Simple, transparent, and fast — from voice to table in no time.
         </p>
       </div>
 
       <div class="steps-grid">
         <div class="step-item reveal reveal-delay-1">
           <div class="step-number">1</div>
-          <h3>Browse &amp; Order</h3>
-          <p>Browse seasonal vegetables from local farms. Add to cart, pick your delivery time.</p>
+          <h3>Tapless Order</h3>
+          <p>Order fresh veggies with your voice. Say "Bhaiya 2 kg alu or 1 kg tamatar dedijiye"—boom, your cart is ready! Works in Bengali, Hindi, and English</p>
         </div>
         <div class="step-item reveal reveal-delay-2">
           <div class="step-number">2</div>
-          <h3>Farmers Harvest</h3>
-          <p></p>
+          <h3>Fresh Procurement</h3>
+          <p>We source your vegetables directly from farmers — same day, no cold storage. Just fresh greens picked that morning.</p>
         </div>
         <div class="step-item reveal reveal-delay-3">
           <div class="step-number">3</div>
-          <h3>Delivered Fresh</h3>
-          <p>Our cold-chain delivery gets your produce to your door within hours of harvest.</p>
+          <h3>Instant Delivery</h3>
+          <p>Get your order delivered the very next day, early morning between 6 AM and 10 AM.</p>
         </div>
       </div>
     </div>
@@ -199,79 +171,17 @@
         <h2>Start eating better today</h2>
         <p>Be among the first to experience farm-fresh vegetables delivered directly from local farms to your home.</p>
         <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
-          <a href="./download.html" class="btn btn-white btn-lg">Download the app →</a>
+          <a href="./download.html" class="btn btn-white btn-lg"><svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download the app →</a>
           <a href="./about.html" class="btn btn-white-outline btn-lg">Our story</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3 class="footer-logo">
-            <img src="./images/app-icon.png" alt="Bajaru Logo"> 
-            Bajaru
-          </h3>
-          <p>Connecting farms to families — delivering the freshest seasonal produce since 2026.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./download.html">iOS App</a></li>
-            <li><a href="./download.html">Android App</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="./about.html">About</a></li>
-            <li><a href="./careers.html">Careers</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Terms</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 Bajaru. All rights reserved.</span>
-        <div class="footer-social">
-          <a href="#" aria-label="Twitter">𝕏</a>
-          <a href="#" aria-label="LinkedIn">in</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <!-- ── FOOTER (loaded from components) ── -->
+  <div id="footer-placeholder"></div>
 
-  <script>
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive: true });
-
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-      const open = mobileMenu.classList.toggle('open');
-      hamburger.classList.toggle('open', open);
-    });
-
-    const reveals = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(el => io.observe(el));
-  </script>
+  <script src="./js/components.js"></script>
+  <script src="./js/shared.js"></script>
 </body>
 </html>

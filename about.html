@@ -7,40 +7,13 @@
   <meta name="description" content="Learn about Bajaru's mission to connect local farms with urban families, our values, and the team making fresh food accessible to everyone." />
   <link rel="icon" type="image/png" href="./images/favicon.ico"/>
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./css/buttons.css" />
 </head>
 <body>
 
-  <!-- ── NAVBAR ── -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-        <a href="./index.html" class="nav-logo">
-        <div class="nav-logo-icon">
-        <img src="./images/app-icon.png" alt="Bajaru Logo">
-        </div>
-        Bajaru
-        </a>
-      <ul class="nav-links">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html" class="active">About</a></li>
-        <li><a href="./careers.html">Careers</a></li>
-        <li><a href="./download.html">Download</a></li>
-      </ul>
-      <div class="nav-cta">
-        <a href="./download.html" class="btn btn-primary btn-sm">Get the App</a>
-      </div>
-      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <div class="nav-mobile" id="mobileMenu">
-    <a href="./index.html">Home</a>
-    <a href="./about.html" class="active">About</a>
-    <a href="./careers.html">Careers</a>
-    <a href="./download.html">Download</a>
-    <a href="./download.html" class="btn btn-primary">Get the App</a>
-  </div>
+  <!-- ── NAVBAR (loaded from components) ── -->
+  <div id="navbar-placeholder"></div>
+  <div id="mobile-menu-placeholder"></div>
 
   <!-- ── ABOUT HERO ── -->
   <section class="about-hero page-top">
@@ -76,8 +49,53 @@
     </div>
   </section>
 
+  <!-- ── AI FEATURE ── -->
+  <section class="ai-feature-section">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;" class="reveal">
+        <div style="display:flex; justify-content:center;">
+          <div class="ai-img-box float-anim">
+            <div class="ai-aura-zone">
+              <div class="ai-img-aura"></div>
+            </div>
+            <img
+              src="./images/AI_Vendor.png"
+              alt="Bajaru AI voice assistant for fresh vegetable ordering"
+              class="ai-img"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div>
+          <span class="section-label">About the AI</span>
+          <h2 class="section-title">Voice-powered.<br>Everyone can shop.</h2>
+          <p style="font-size:1.0625rem; color:var(--gray-500); line-height:1.75; margin-bottom:24px;">
+            We've automated the entire app experience so even elderly and non-techy users can order fresh vegetables with ease. Browse, search, add items, check prices, and add your address — all by speaking in your native language.
+          </p>
+          <p style="font-size:1.0625rem; color:var(--gray-500); line-height:1.75; margin-bottom:32px;">
+            Just say "Bhaiya 2 kg alu or 1 kg tamatar dedijiye" and boom — your cart is ready. Bajaru works flawlessly in Bengali, Hindi, and English, making fresh food accessible to everyone.
+          </p>
+          <div class="ai-feature-pills">
+            <div class="ai-pill">
+              <span class="ai-pill-icon">🤖</span>
+              <span class="ai-pill-label">AI-powered</span>
+            </div>
+            <div class="ai-pill">
+              <span class="ai-pill-icon">🎤</span>
+              <span class="ai-pill-label">Voice-first</span>
+            </div>
+            <div class="ai-pill">
+              <span class="ai-pill-icon">🌐</span>
+              <span class="ai-pill-label">3 languages</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── MISSION ── -->
-  <section>
+  <section class="mission-section">
     <div class="container">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;" class="reveal">
         <div>
@@ -158,7 +176,7 @@
   </section>
 
   <!-- ── TEAM ── -->
-  <section>
+  <section id="team">
     <div class="container">
       <div class="reveal" style="text-align:center; max-width:520px; margin:0 auto 0;">
         <span class="section-label">The Team</span>
@@ -210,81 +228,10 @@
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3 class="footer-logo">
-            <img src="./images/app-icon.png" alt="Bajaru Logo"> 
-            Bajaru
-          </h3>
-          <p>Connecting farms to families — delivering the freshest seasonal produce since 2026.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./download.html">iOS App</a></li>
-            <li><a href="./download.html">Android App</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="./about.html">About</a></li>
-            <li><a href="./careers.html">Careers</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Terms</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 Bajaru. All rights reserved.</span>
-        <div class="footer-social">
-          <a href="#" aria-label="Twitter">𝕏</a>
-          <a href="#" aria-label="LinkedIn">in</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <!-- ── FOOTER (loaded from components) ── -->
+  <div id="footer-placeholder"></div>
 
-  <script>
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive: true });
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-      const open = mobileMenu.classList.toggle('open');
-      hamburger.classList.toggle('open', open);
-    });
-    const reveals = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(el => io.observe(el));
-
-    /* Fix grid responsive on about mission section */
-    const missionGrid = document.querySelector('[style*="grid-template-columns:1fr 1fr"]');
-    if (missionGrid && window.innerWidth <= 1024) {
-      missionGrid.style.gridTemplateColumns = '1fr';
-    }
-    window.addEventListener('resize', () => {
-      if (missionGrid) {
-        missionGrid.style.gridTemplateColumns = window.innerWidth <= 1024 ? '1fr' : '1fr 1fr';
-      }
-    });
-  </script>
+  <script src="./js/components.js"></script>
+  <script src="./js/shared.js"></script>
 </body>
 </html>

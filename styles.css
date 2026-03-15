@@ -286,88 +286,6 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
 }
 
-.nav-mobile .btn-primary {
-  margin-top: 8px;
-  text-align: center;
-}
-
-/* ============================================
-   BUTTONS
-   ============================================ */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 24px;
-  font-family: var(--font);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  border-radius: var(--radius-md);
-  border: 1.5px solid transparent;
-  cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
-  color: var(--white);
-  border-color: var(--primary-dark);
-  box-shadow: 0 2px 8px rgba(22,163,74,0.30), 0 1px 2px rgba(0,0,0,0.08);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(22,163,74,0.40), 0 2px 6px rgba(0,0,0,0.08);
-  background: linear-gradient(135deg, #4ade80 0%, var(--primary-light) 100%);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(22,163,74,0.30);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--gray-700);
-  border-color: var(--gray-300);
-}
-
-.btn-outline:hover {
-  background: var(--gray-50);
-  border-color: var(--gray-400);
-  color: var(--gray-900);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
-}
-
-.btn-outline-green {
-  background: transparent;
-  color: var(--primary);
-  border-color: var(--green-300);
-}
-
-.btn-outline-green:hover {
-  background: var(--green-50);
-  border-color: var(--primary);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(22,163,74,0.15);
-}
-
-.btn-lg {
-  padding: 15px 32px;
-  font-size: 1rem;
-  border-radius: var(--radius-md);
-}
-
-.btn-sm {
-  padding: 8px 16px;
-  font-size: 0.875rem;
-  border-radius: var(--radius-sm);
-}
-
 /* ============================================
    BADGE / PILL
    ============================================ */
@@ -482,6 +400,106 @@ section {
 
 .float-anim {
   animation: floatY 5s ease-in-out infinite;
+}
+
+/* AI image — green aura backlit (theme-matched), borderless glow */
+.ai-img-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.ai-aura-zone {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.ai-img-aura {
+  position: absolute;
+  inset: -30%;
+  background: 
+    radial-gradient(ellipse 60% 60% at 50% 50%, rgba(34, 197, 94, 0.25) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, rgba(74, 222, 128, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse 70% 70% at 50% 50%, rgba(134, 239, 172, 0.18) 0%, transparent 60%);
+  animation: aiAuraMove 10s ease-in-out infinite;
+}
+
+.ai-img-aura::before {
+  content: '';
+  position: absolute;
+  inset: -15%;
+  background: radial-gradient(circle at 50% 50%, rgba(22, 163, 74, 0.15) 0%, transparent 45%);
+  animation: aiAuraPulse 7s ease-in-out infinite alternate;
+}
+
+@keyframes aiAuraMove {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(8%, -5%) scale(1.05); }
+  50% { transform: translate(-5%, 8%) scale(0.98); }
+  75% { transform: translate(-8%, -3%) scale(1.02); }
+}
+
+@keyframes aiAuraPulse {
+  0% { opacity: 0.6; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1.08); }
+}
+
+.ai-img-box .ai-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: var(--radius-xl);
+  display: block;
+}
+
+/* AI feature pills — modern compact badges */
+.ai-feature-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.ai-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: var(--white);
+  border: 1px solid var(--green-100);
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.ai-pill:hover {
+  border-color: var(--green-200);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.ai-pill-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--green-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.ai-pill-label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--gray-800);
 }
 
 /* ============================================
@@ -852,31 +870,6 @@ section {
   line-height: 1.7;
 }
 
-.btn-white {
-  background: var(--white);
-  color: var(--primary-dark);
-  border-color: transparent;
-  font-weight: 700;
-}
-
-.btn-white:hover {
-  background: var(--green-50);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-}
-
-.btn-white-outline {
-  background: transparent;
-  color: var(--white);
-  border: 1.5px solid rgba(255,255,255,0.5);
-}
-
-.btn-white-outline:hover {
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.75);
-  transform: translateY(-1px);
-}
-
 /* ============================================
    FOOTER
    ============================================ */
@@ -987,6 +980,31 @@ footer {
   width: 600px; height: 600px;
   background: radial-gradient(circle, rgba(74,222,128,0.15) 0%, transparent 70%);
   pointer-events: none;
+}
+
+/* AI Feature section — distinct block with modern separation */
+.ai-feature-section {
+  background: var(--gray-50);
+  border-top: 1px solid var(--gray-100);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+/* Mission section — clean separation from AI block */
+.mission-section {
+  background: var(--white);
+  position: relative;
+}
+
+.mission-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--green-300), transparent);
+  border-radius: 2px;
 }
 
 .values-section {
@@ -1216,52 +1234,6 @@ footer {
   background: #dbeafe;
   color: #1e40af;
   border: 1px solid #93c5fd;
-}
-
-/* Download button — special premium style */
-.btn-download {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 32px;
-  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
-  color: var(--white);
-  border-radius: var(--radius-md);
-  font-size: 1.0625rem;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(37,99,235,0.40);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  text-decoration: none;
-}
-
-.btn-download::before {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.5s ease;
-}
-
-.btn-download:hover::before {
-  left: 100%;
-}
-
-.btn-download:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 36px rgba(37,99,235,0.45);
-}
-
-.btn-download:active {
-  transform: translateY(-1px);
-}
-
-.btn-download-icon {
-  font-size: 1.25rem;
 }
 
 .store-badges {
