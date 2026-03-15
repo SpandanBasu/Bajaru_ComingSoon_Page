@@ -55,7 +55,7 @@
           <p class="desc">
             Download Bajaru and unlock access to 500+ seasonal vegetables from 200+ local farms. Set up weekly subscriptions, track deliveries live, and never worry about meal planning again.
           </p>
-          <div id="download-links" class="store-badges">
+          <!-- <div id="download-links" class="store-badges">
             <a href="#" class="store-badge">
               <span class="store-icon">🍎</span>
               <div class="store-text">
@@ -70,7 +70,28 @@
                 <strong>Google Play</strong>
               </div>
             </a>
+          </div> -->
+            <div class="store-badges">
+
+            <a href="#" class="store-badge-card">
+              <img src="./images/Apple_logo_black.svg" class="store-logo" alt="Apple">
+              <div class="store-text">
+                <small>Download on the</small>
+                <strong>App Store</strong>
+              </div>
+            </a>
+
+            <a href="#" class="store-badge-card">
+              <img src="./images/Google_Play_Arrow_logo.svg" class="store-logo" alt="Google Play">
+              <div class="store-text">
+                <small>GET IT ON</small>
+                <strong>Google Play</strong>
+              </div>
+            </a>
+
           </div>
+
+
           <div style="display:flex; align-items:center; gap:10px; margin-top:16px; color:var(--gray-400); font-size:0.875rem;">
             <span style="color:#f59e0b;">★★★★★</span>
             <strong style="color:var(--gray-700);">4.9</strong>
@@ -80,13 +101,24 @@
 
         <!-- Right: phone mockup -->
         <div class="hero-split-visual">
-          <div class="phone-wrap float-anim">
+          <!-- <div class="phone-wrap float-anim">
             <div class="phone-mockup" style="transform:rotate(-6deg);">
               📱
             </div>
             <div class="phone-mockup" style="z-index:1; width:220px; height:400px; border-radius:36px; font-size:3.5rem;">
               🥦
             </div>
+          </div> -->
+          <div class="phone-wrap float-anim">
+
+            <div class="phone-mockup" style="transform:rotate(-6deg);">
+              <img src="./images/Google_Play_Arrow_logo.svg" class="phone-app-logo" alt="Google Play">
+            </div>
+
+            <div class="phone-mockup" style="z-index:1; width:220px; height:400px; border-radius:36px;">
+              <img src="./images/Apple_logo_black.svg" class="phone-app-logo apple-white" alt="App Store">
+            </div>
+
           </div>
         </div>
       </div>
@@ -105,7 +137,9 @@
       </div>
       <div class="platform-grid">
         <div class="platform-card reveal reveal-delay-1">
-          <div class="icon">🍎</div>
+          <div class="icon">
+            <img src="./images/Apple_logo_black.svg" class="platform-logo" alt="Apple">
+          </div>
           <h4>iPhone &amp; iPad</h4>
           <p>Native iOS app with Live Activities and Apple Pay support.</p>
           <a href="#" class="btn-download btn-sm">
@@ -113,7 +147,9 @@
           </a>
         </div>
         <div class="platform-card reveal reveal-delay-2">
-          <div class="icon">🤖</div>
+          <div class="icon">
+            <img src="./images/Google_Play_Arrow_logo.svg" class="platform-logo" alt="Android">
+          </div>
           <h4>Android</h4>
           <p>Full-featured Android app with Google Pay and widget support.</p>
           <a href="#" class="btn-download btn-sm">
@@ -153,10 +189,10 @@
               </div>
             </div>
             <div style="display:flex; gap:16px; align-items:flex-start;">
-              <div class="feature-icon" style="margin-bottom:0; flex-shrink:0;">🧾</div>
+              <div class="feature-icon" style="margin-bottom:0; flex-shrink:0;">🤖</div>
               <div>
-                <h4 style="margin-bottom:4px;">Farm transparency</h4>
-                <p style="font-size:0.9375rem;">Every product shows which farm, harvest date, and quality test results. Full traceability.</p>
+                <h4 style="margin-bottom:4px;">AI-powered zero-tap ordering</h4>
+                <p style="font-size:0.9375rem;">Simply speak your order and Bajaru does the rest. Our AI understands your voice, adds items to cart, checks prices, and places the order automatically.</p>
               </div>
             </div>
             <div style="display:flex; gap:16px; align-items:flex-start;">
@@ -195,9 +231,9 @@
           <div class="review-stars">★★★★★</div>
           <p>"Early users will soon share their experience of ordering fresh vegetables directly from farms using Bajaru."</p>
           <div class="review-author">
-            <div class="review-avatar">SK</div>
+            <div class="review-avatar">AM</div>
             <div>
-              <strong>Argho Mondal</strong>
+              <strong>Arpan Mondal</strong>
               <span>Kolkata · few days ago</span>
             </div>
           </div>
@@ -206,7 +242,7 @@
           <div class="review-stars">★★★★★</div>
           <p>"Early users will soon share their experience of ordering fresh vegetables directly from farms using Bajaru."</p>
           <div class="review-author">
-            <div class="review-avatar">SK</div>
+            <div class="review-avatar">AM</div>
             <div>
               <strong>Argho Mondal</strong>
               <span>Kolkata · few days ago</span>
@@ -217,9 +253,9 @@
           <div class="review-stars">★★★★★</div>
           <p>"Early users will soon share their experience of ordering fresh vegetables directly from farms using Bajaru."</p>
           <div class="review-author">
-            <div class="review-avatar">SK</div>
+            <div class="review-avatar">SD</div>
             <div>
-              <strong>Argho Mondal</strong>
+              <strong>Sashmit Darbari</strong>
               <span>Kolkata · few days ago</span>
             </div>
           </div>
@@ -242,11 +278,11 @@
         </div>
         <div class="faq-item reveal">
           <button class="faq-q">How quickly is my order delivered?</button>
-          <div class="faq-a"><p>We guarantee delivery within 24 hours of your order. Most orders placed before 9am are delivered the same day. In metro areas, we often deliver within 4–6 hours.</p></div>
+          <div class="faq-a"><p>We guarantee next-day delivery after placing your order.</p></div>
         </div>
         <div class="faq-item reveal">
           <button class="faq-q">What cities do you currently serve?</button>
-          <div class="faq-a"><p>We currently serve Mumbai, Pune, Bengaluru, Chennai, Hyderabad, Delhi NCR, Ahmedabad, Jaipur, Kolkata, Chandigarh, Kochi, and Indore. More cities are launching soon.</p></div>
+          <div class="faq-a"><p>We will be start serving in Sodepur(Kolkata). More cities will be launching soon.</p></div>
         </div>
         <div class="faq-item reveal">
           <button class="faq-q">Can I set up recurring orders?</button>
@@ -267,8 +303,14 @@
         <h2>Ready for your first delivery?</h2>
         <p>Download the app, pick your vegetables, and taste the difference that freshness makes.</p>
         <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
-          <a href="#" class="btn btn-white btn-lg">🍎 App Store</a>
-          <a href="#" class="btn btn-white-outline btn-lg">▶ Google Play</a>
+          <a href="#" class="btn btn-white btn-lg">
+            <img src="./images/Apple_logo_black.svg" class="cta-logo" alt="Apple">
+            App Store
+          </a>
+          <a href="#" class="btn btn-white-outline btn-lg">
+            <img src="./images/Google_Play_Arrow_logo.svg" class="cta-logo" alt="Google Play">
+            Google Play
+          </a>
         </div>
       </div>
     </div>

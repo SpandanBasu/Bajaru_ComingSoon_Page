@@ -289,10 +289,20 @@ img { max-width: 100%; display: block; }
 /* ============================================
    BADGE / PILL
    ============================================ */
-.badge {
+/* .badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+} */
+
+.badge {
+  display: inline-block;
+  width: fit-content;
   padding: 5px 12px;
   border-radius: 999px;
   font-size: 0.8125rem;
@@ -673,15 +683,25 @@ section {
   font-size: 0.75rem;
 }
 
-.hero-card-1 {
+/* .hero-card-1 {
   bottom: -16px;
   left: -32px;
   animation: floatY 6s ease-in-out infinite;
+} */
+ .hero-card-1{
+  bottom: -65px;
+  left: -10px;
+  animation: floatY 6s ease-in-out infinite;
 }
 
-.hero-card-2 {
+/* .hero-card-2 {
   top: 24px;
   right: -24px;
+  animation: floatY 7s ease-in-out infinite reverse;
+} */
+ .hero-card-2{
+  top: -55px;
+  right: -10px;
   animation: floatY 7s ease-in-out infinite reverse;
 }
 
@@ -995,7 +1015,7 @@ footer {
   position: relative;
 }
 
-.mission-section::before {
+/* .mission-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -1005,7 +1025,7 @@ footer {
   height: 3px;
   background: linear-gradient(90deg, transparent, var(--green-300), transparent);
   border-radius: 2px;
-}
+} */
 
 .values-section {
   background: var(--gray-50);
@@ -1087,6 +1107,11 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: 3rem;
+}
+ .team-card-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
 .team-card-body {
@@ -1236,7 +1261,7 @@ footer {
   border: 1px solid #93c5fd;
 }
 
-.store-badges {
+/* .store-badges {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
@@ -1262,6 +1287,48 @@ footer {
   background: var(--gray-700);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+} */
+ .store-badges{
+  display:flex;
+  gap:20px;
+  margin-top:20px;
+  flex-wrap:wrap;
+}
+
+.store-badge-card{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:16px 26px;
+  background:#ffffff;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  text-decoration:none;
+  transition:all .25s ease;
+}
+
+.store-badge-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 35px rgba(0,0,0,0.12);
+}
+
+.store-logo{
+  width:34px;
+  height:34px;
+  object-fit:contain;
+}
+
+.store-text small{
+  display:block;
+  font-size:12px;
+  color:#666;
+  letter-spacing:0.05em;
+}
+
+.store-text strong{
+  font-size:20px;
+  font-weight:600;
+  color:#111;
 }
 
 .store-badge .store-icon {
@@ -1546,4 +1613,223 @@ footer {
   .stats-row {
     grid-template-columns: 1fr 1fr;
   }
+}
+.phone-app-logo{
+  width:60px;
+  height:60px;
+  object-fit:contain;
+}
+.apple-white{
+  filter: brightness(0) invert(1);
+}
+.platform-logo{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+}
+/* Platform section icon fix */
+.platform-card .icon{
+  width:52px;
+  height:52px;
+  margin:0 auto 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.platform-logo{
+  width:40px;
+  height:40px;
+  object-fit:contain;
+}
+.cta-logo{
+  width:20px;
+  height:20px;
+  margin-right:8px;
+  object-fit:contain;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .7s cubic-bezier(.2,.8,.2,1);
+}
+
+
+
+
+
+
+
+
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.feature-card:hover,
+.value-card:hover,
+.perk-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 50px rgba(0,0,0,0.12);
+}
+.hero h1 span{
+  background:linear-gradient(90deg,#16a34a,#22c55e,#4ade80);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.navbar{
+  backdrop-filter:blur(12px);
+  background:rgba(255,255,255,0.8);
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle,rgba(34,197,94,.15),transparent);
+  top:-200px;
+  right:-200px;
+  filter:blur(40px);
+}
+body{
+  animation:fadeIn .6s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;}
+}
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#22c55e;
+  border-radius:20px;
+}
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+
+.hero-video{
+  width:100%;
+  max-width:600px;
+  height:auto;
+  border-radius:20px;
+  object-fit:contain;
+
+  /* glowing animation */
+  animation: glowBlink 3s ease-in-out infinite alternate;
+}
+
+/* GREEN GLOW BLINK ANIMATION */
+
+@keyframes glowBlink{
+
+  0%{
+    box-shadow:
+      -20px 0 30px rgba(34,197,94,0.2),
+       20px 0 30px rgba(34,197,94,0.2);
+  }
+
+  50%{
+    box-shadow:
+      -25px 0 45px rgba(34,197,94,0.5),
+       25px 0 45px rgba(34,197,94,0.5);
+  }
+
+  100%{
+    box-shadow:
+      -30px 0 60px rgba(34,197,94,0.8),
+       30px 0 60px rgba(34,197,94,0.8);
+  }
+
+}
+
+
+.illus-box-green{
+  background:#8fb8cf;
+  border-radius:24px;
+  overflow:visible;
+  position:relative;
+
+  animation: aboutGlow 3s ease-in-out infinite alternate;
+}
+
+/* ABOUT VIDEO */
+
+.about-video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  border-radius:18px;
+}
+
+/* BLUE GLOW */
+
+@keyframes aboutGlow{
+
+  0%{
+    box-shadow:
+      0 0 20px rgba(60,120,255,0.25),
+      0 0 40px rgba(60,120,255,0.15);
+  }
+
+  50%{
+    box-shadow:
+      0 0 50px rgba(60,120,255,0.45),
+      0 0 100px rgba(60,120,255,0.25);
+  }
+
+  100%{
+    box-shadow:
+      0 0 80px rgba(60,120,255,0.65),
+      0 0 160px rgba(60,120,255,0.35);
+  }
+
+}
+
+/* WRAPPER WITH GLOW */
+/* VIDEO */
+
+.careers-video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  border-radius:18px;
+}
+
+/* GLOW CONTAINER */
+
+.illus-box-yellow{
+  position:relative;
+  border-radius:22px;
+  overflow:visible;
+
+  animation: careersGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes careersGlow{
+
+  0%{
+    box-shadow:
+      0 0 20px rgba(255,180,50,0.25),
+      0 0 40px rgba(255,180,50,0.15);
+  }
+
+  50%{
+    box-shadow:
+      0 0 50px rgba(255,180,50,0.45),
+      0 0 100px rgba(255,180,50,0.25);
+  }
+
+  100%{
+    box-shadow:
+      0 0 80px rgba(255,180,50,0.65),
+      0 0 160px rgba(255,180,50,0.35);
+  }
+
 }
