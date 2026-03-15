@@ -7,6 +7,7 @@
   <meta name="description" content="Download the Bajaru app on iOS or Android and start ordering farm-fresh vegetables delivered to your door in under 24 hours." />
   <link rel="icon" type="image/png" href="./images/favicon.ico"/>
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./css/buttons.css" />
 
   <style>
     /* Download-page specific overrides */
@@ -36,37 +37,9 @@
 </head>
 <body>
 
-  <!-- ── NAVBAR ── -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-       <a href="./index.html" class="nav-logo">
-        <div class="nav-logo-icon">
-        <img src="./images/app-icon.png" alt="Bajaru Logo">
-        </div>
-        Bajaru
-        </a>
-      <ul class="nav-links">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About</a></li>
-        <li><a href="./careers.html">Careers</a></li>
-        <li><a href="./download.html" class="active">Download</a></li>
-      </ul>
-      <div class="nav-cta">
-        <a href="#download-links" class="btn btn-primary btn-sm">Get the App</a>
-      </div>
-      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <div class="nav-mobile" id="mobileMenu">
-    <a href="./index.html">Home</a>
-    <a href="./about.html">About</a>
-    <a href="./careers.html">Careers</a>
-    <a href="./download.html" class="active">Download</a>
-    <a href="#download-links" class="btn btn-primary">Get the App</a>
-  </div>
+  <!-- ── NAVBAR (loaded from components) ── -->
+  <div id="navbar-placeholder"></div>
+  <div id="mobile-menu-placeholder"></div>
 
   <!-- ── DOWNLOAD HERO ── -->
   <section class="download-hero page-top">
@@ -135,7 +108,7 @@
           <div class="icon">🍎</div>
           <h4>iPhone &amp; iPad</h4>
           <p>Native iOS app with Live Activities and Apple Pay support.</p>
-          <a href="#" class="btn-download" style="display:inline-flex; font-size:0.9375rem; padding:12px 20px;">
+          <a href="#" class="btn-download btn-sm">
             <span class="btn-download-icon">⬇</span> App Store
           </a>
         </div>
@@ -143,7 +116,7 @@
           <div class="icon">🤖</div>
           <h4>Android</h4>
           <p>Full-featured Android app with Google Pay and widget support.</p>
-          <a href="#" class="btn-download" style="display:inline-flex; font-size:0.9375rem; padding:12px 20px;">
+          <a href="#" class="btn-download btn-sm">
             <span class="btn-download-icon">⬇</span> Google Play
           </a>
         </div>
@@ -151,7 +124,7 @@
           <div class="icon">🌐</div>
           <h4>Web App</h4>
           <p>Order directly from your browser — no download required.</p>
-          <a href="#" class="btn btn-outline btn-sm" style="border-radius:var(--radius-md);">Open web app →</a>
+          <a href="#" class="btn btn-outline btn-sm">Open web app →</a>
         </div>
       </div>
     </div>
@@ -301,89 +274,10 @@
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3 class="footer-logo">
-            <img src="./images/app-icon.png" alt="Bajaru Logo"> 
-            Bajaru
-          </h3>
-          <p>Connecting farms to families — delivering the freshest seasonal produce since 2026.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./download.html">iOS App</a></li>
-            <li><a href="./download.html">Android App</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="./about.html">About</a></li>
-            <li><a href="./careers.html">Careers</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Terms</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 Bajaru. All rights reserved.</span>
-        <div class="footer-social">
-          <a href="#" aria-label="Twitter">𝕏</a>
-          <a href="#" aria-label="LinkedIn">in</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <!-- ── FOOTER (loaded from components) ── -->
+  <div id="footer-placeholder"></div>
 
-  <script>
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive: true });
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-      const open = mobileMenu.classList.toggle('open');
-      hamburger.classList.toggle('open', open);
-    });
-
-    /* FAQ accordion */
-    document.querySelectorAll('.faq-item').forEach(item => {
-      item.querySelector('.faq-q').addEventListener('click', () => {
-        const wasOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-        if (!wasOpen) item.classList.add('open');
-      });
-    });
-
-    /* Responsive two-col grid */
-    const grid = document.getElementById('appFeatGrid');
-    function handleResize() {
-      if (grid) grid.style.gridTemplateColumns = window.innerWidth <= 1024 ? '1fr' : '1fr 1fr';
-    }
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    /* Scroll reveal */
-    const reveals = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(el => io.observe(el));
-  </script>
+  <script src="./js/components.js"></script>
+  <script src="./js/shared.js"></script>
 </body>
 </html>
