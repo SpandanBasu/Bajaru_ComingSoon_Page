@@ -1,53 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bajaru - Fresh Vegetable Delivery. Farm-fresh vegetables delivered instantly to your doorstep. Coming Soon!">
-    <meta name="keywords" content="vegetables, fresh, delivery, farm, organic, bajaru">
-    <title>Bajaru - Fresh Vegetable Delivery | Coming Soon</title>
-
-    <!-- Google Fonts - Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bajaru — Farm Fresh Vegetables, Delivered</title>
+  <meta name="description" content="Bajaru connects you directly with local farms. Get the freshest seasonal vegetables delivered to your door within 24 hours of harvest." />
+  <meta property="og:title" content="Bajaru — Farm Fresh Vegetables, Delivered" />
+  <meta property="og:description" content="Get the freshest seasonal vegetables delivered from farm to door in 24 hours." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥦</text></svg>" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-    <main class="container">
-        <!-- Hero Section -->
-        <section class="hero">
-            <!-- Hero Content -->
-            <div class="hero-content">
-                <h1 class="hero-title fade-in">Freshness Coming to Your Doorstep!</h1>
-                <p class="hero-subtitle fade-in delay-1">
-                    Bajaru is launching soon. Get ready for farm-fresh vegetables delivered instantly.
-                </p>
-            </div>
 
-            <!-- Hero Illustration / Logo -->
-            <div class="hero-image-wrapper fade-in delay-2">
-                <img src="images/logo.png" alt="Bajaru Logo" class="hero-image">
-            </div>
-
-            <!-- Coming Soon Badge -->
-            <div class="coming-soon-badge fade-in delay-3">
-                <span class="badge-text">Coming Soon</span>
-                <div class="pulse-ring"></div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p class="copyright">&copy; 2025 Bajaru. All rights reserved.</p>
-            <p class="contact">
-                <a href="mailto:bajaru.developer@gmail.com">bajaru.developer@gmail.com</a>
-            </p>
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+        <a href="./index.html" class="nav-logo">
+        <div class="nav-logo-icon">
+        <img src="./images/app-icon.png" alt="Bajaru Logo">
         </div>
-    </footer>
+        Bajaru
+        </a>
+      <ul class="nav-links">
+        <li><a href="./index.html" class="active">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./careers.html">Careers</a></li>
+        <li><a href="./download.html">Download</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="./download.html" class="btn btn-primary btn-sm">Get the App</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="nav-mobile" id="mobileMenu">
+    <a href="./index.html" class="active">Home</a>
+    <a href="./about.html">About</a>
+    <a href="./careers.html">Careers</a>
+    <a href="./download.html">Download</a>
+    <a href="./download.html" class="btn btn-primary">Get the App</a>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="hero page-top">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div>
+          <span class="badge badge-green badge-pulse">Launching in Sodepur</span>
+        </div>
+        <h1>
+          Farm-fresh vegetables,<br>
+          <span>delivered in hours</span>
+        </h1>
+        <p class="lead">
+          We partner with local farms to bring you the freshest, most nutritious vegetables — harvested this morning and on your table tonight.
+        </p>
+        <div class="hero-actions">
+          <a href="./download.html" class="btn btn-primary btn-lg">Download the App</a>
+          <a href="./about.html" class="btn btn-outline btn-lg">Learn more</a>
+        </div>
+        <div class="hero-trust">
+            <div class="hero-trust-avatars">
+                <span>AK</span><span>RS</span><span>MJ</span><span>PL</span>
+            </div>
+            <span>Launching soon for early customers</span>
+            </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image-wrap float-anim">
+          <img
+            src="./images/logo.png"
+            alt="Fresh vegetables at a local farm market"
+            loading="eager"
+          />
+          <div class="hero-card hero-card-1">
+            <div class="hero-card-icon" style="background:#dcfce7;">🚚</div>
+            <div>
+              <strong>Next-Day Delivery</strong>
+              <small>Farm to your door</small>
+            </div>
+          </div>
+          <div class="hero-card hero-card-2">
+            <div class="hero-card-icon" style="background:#fef9c3;">⭐</div>
+            <div>
+              <strong>4.9 / 5 Rating</strong>
+              <small>From early users reviews</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES ── -->
+  <section class="features-bg">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">Why Bajaru</span>
+        <h2 class="section-title">Good food starts at the source</h2>
+        <p class="section-subtitle">
+          We built Bajaru because everyone deserves genuinely fresh produce — not vegetables that sat in a warehouse for weeks.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon">🌱</div>
+          <h3>Directly from farms</h3>
+          <p>We source directly from 200+ certified organic farms, cutting out middlemen and keeping prices fair.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">🚚</div>
+        <h3>Next-day delivery</h3>
+        <p>Place your order today and receive farm-fresh vegetables the next day. Our delivery system ensures produce reaches you fresh and safely.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon">♻️</div>
+          <h3>Zero-waste packaging</h3>
+          <p>100% biodegradable, compostable packaging. We care about the planet as much as your health.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon">💰</div>
+          <h3>Fair prices</h3>
+          <p>By shortening the supply chain, farmers earn more and you pay less. Good food should be affordable.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon">🧪</div>
+          <h3>Quality tested</h3>
+          <p>Every batch is tested for pesticides. We publish full reports so you know exactly what you eat.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon">📱</div>
+          <h3>AI-Powered</h3>
+          <p>Browse seasonal selections, schedule recurring deliveries, and track your order live — all in the app.</p>
+        </div>
+      </div>
+
+            <div class="stats-row reveal">
+        <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Launch city</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">Soon</div>
+            <div class="stat-label">Happy customers</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">Fresh</div>
+            <div class="stat-label">Farm vegetables</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">24*7</div>
+            <div class="stat-label">Live Support</div>
+        </div>
+        </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ── -->
+  <section>
+    <div class="container">
+      <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto 56px;">
+        <span class="section-label">How it works</span>
+        <h2 class="section-title">Farm to table in three steps</h2>
+        <p class="section-subtitle" style="margin:0 auto;">
+          Simple, transparent, and fast — from clicking order to tasting freshness.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-item reveal reveal-delay-1">
+          <div class="step-number">1</div>
+          <h3>Browse &amp; Order</h3>
+          <p>Browse seasonal vegetables from local farms. Add to cart, pick your delivery time.</p>
+        </div>
+        <div class="step-item reveal reveal-delay-2">
+          <div class="step-number">2</div>
+          <h3>Farmers Harvest</h3>
+          <p></p>
+        </div>
+        <div class="step-item reveal reveal-delay-3">
+          <div class="step-number">3</div>
+          <h3>Delivered Fresh</h3>
+          <p>Our cold-chain delivery gets your produce to your door within hours of harvest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BAND ── -->
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner reveal">
+        <h2>Start eating better today</h2>
+        <p>Be among the first to experience farm-fresh vegetables delivered directly from local farms to your home.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+          <a href="./download.html" class="btn btn-white btn-lg">Download the app →</a>
+          <a href="./about.html" class="btn btn-white-outline btn-lg">Our story</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="footer-logo">
+            <img src="./images/logo.png" alt="Bajaru Logo">
+            Bajaru
+          </h3>
+          <p>Connecting farms to families — delivering the freshest seasonal produce since 2026.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./download.html">iOS App</a></li>
+            <li><a href="./download.html">Android App</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./careers.html">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Bajaru. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+    });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => io.observe(el));
+  </script>
 </body>
 </html>
