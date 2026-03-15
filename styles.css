@@ -959,6 +959,17 @@ footer {
   color: var(--green-400);
 }
 
+.footer-logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.footer-logo img{
+  height:32px;
+  width:auto;
+}
+
 /* ============================================
    ABOUT PAGE
    ============================================ */
