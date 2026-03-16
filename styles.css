@@ -570,7 +570,7 @@ section {
   padding: 100px 24px 80px;
   position: relative;
   z-index: 1;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero-text {
@@ -1973,7 +1973,7 @@ body::-webkit-scrollbar-thumb{
 .illus-box-green{
   background:#8fb8cf;
   border-radius:24px;
-  overflow:visible;
+  overflow:hidden;
   position:relative;
 
   animation: aboutGlow 3s ease-in-out infinite alternate;
@@ -1986,7 +1986,7 @@ body::-webkit-scrollbar-thumb{
   height:100%;
   object-fit:cover;
   display:block;
-  border-radius:18px;
+  border-radius:0;
 }
 
 /* BLUE GLOW */
@@ -2021,7 +2021,7 @@ body::-webkit-scrollbar-thumb{
   height:100%;
   object-fit:cover;
   display:block;
-  border-radius:18px;
+  border-radius:0;
 }
 
 /* GLOW CONTAINER */
@@ -2029,7 +2029,7 @@ body::-webkit-scrollbar-thumb{
 .illus-box-yellow{
   position:relative;
   border-radius:22px;
-  overflow:visible;
+  overflow:hidden;
 
   animation: careersGlow 3s ease-in-out infinite alternate;
 }
