@@ -1080,7 +1080,7 @@ footer {
 }
 /* Mission illus-box: allow shadow to show fully (overflow:hidden on base clips it) */
 .mission-section .illus-box {
-  overflow: visible;
+  overflow: hidden;
 }
 
 /* .mission-section::before {
