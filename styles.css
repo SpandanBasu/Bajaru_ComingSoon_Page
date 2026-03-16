@@ -61,7 +61,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
+
+/* Prevent horizontal overflow - avoid 100vw as it can include scrollbar and cause overflow */
 
 body {
   font-family: var(--font);
@@ -72,6 +76,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  position: relative;
 }
 
 /* ── Page fade-in ── */
@@ -108,6 +113,8 @@ img { max-width: 100%; display: block; }
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .sr-only {
@@ -338,6 +345,7 @@ img { max-width: 100%; display: block; }
 
 section {
   padding: 96px 0;
+  overflow-x: hidden;
 }
 
 .section-label {
@@ -369,12 +377,14 @@ section {
   align-items: center;
   min-height: calc(100vh - var(--nav-h));
   padding: 80px 0 60px;
+  overflow: hidden;
 }
 
 .hero-split-text {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  min-width: 0; /* Prevent grid child overflow on mobile */
 }
 
 .hero-split-text h1 {
@@ -400,6 +410,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 0; /* Prevent grid child overflow on mobile */
 }
 
 /* Floating image animation */
@@ -559,6 +570,7 @@ section {
   padding: 100px 24px 80px;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 .hero-text {
@@ -989,8 +1001,22 @@ footer {
 .about-hero {
   padding-top: var(--nav-h);
   background: linear-gradient(160deg, #fafffe 0%, #f0fdf4 60%, #dcfce7 100%);
-  overflow: hidden;
+  overflow: visible;
   position: relative;
+}
+
+/* Let button shadows show fully — no clipping on hover */
+.about-hero .container,
+.about-hero .hero-split,
+.about-hero .hero-split-text,
+.about-hero .hero-split-actions {
+  overflow: visible;
+}
+
+/* Extra padding gives shadow room so it doesn't get clipped by body overflow-x */
+.about-hero .container {
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .about-hero::before {
@@ -1007,12 +1033,54 @@ footer {
   background: var(--gray-50);
   border-top: 1px solid var(--gray-100);
   border-bottom: 1px solid var(--gray-100);
+  overflow: hidden; /* Prevents internal scroll */
+  padding: 64px 0 48px; /* Reduced top/bottom - no extra space, part of main flow */
+}
+.ai-feature-section .container {
+  overflow: hidden; /* Container's overflow-x:hidden can trigger overflow-y:auto scrollbar */
+}
+
+/* AI Feature grid — desktop two-column layout */
+.ai-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.ai-feature-grid > div:first-child {
+  display: flex;
+  justify-content: center;
 }
 
 /* Mission section — clean separation from AI block */
 .mission-section {
   background: var(--white);
   position: relative;
+  overflow: visible;
+  padding-bottom: 72px; /* Enough for shadow, no excess white block */
+}
+.mission-section .container {
+  overflow: visible; /* Don't clip illus-box shadow */
+}
+
+/* Mission grid — desktop two-column layout */
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start; /* Prevents white box below image when text column is taller */
+}
+
+.mission-grid .mission-visual {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Prevents illus-box stretch + white space below */
+  overflow: visible; /* Let illus-box shadow extend */
+}
+/* Mission illus-box: allow shadow to show fully (overflow:hidden on base clips it) */
+.mission-section .illus-box {
+  overflow: visible;
 }
 
 /* .mission-section::before {
@@ -1135,8 +1203,22 @@ footer {
 .careers-hero {
   padding-top: var(--nav-h);
   background: linear-gradient(160deg, #fffbf0 0%, #fefce8 40%, #fef9c3 100%);
-  overflow: hidden;
+  overflow: visible;
   position: relative;
+}
+
+/* Let button shadows show fully — no clipping on hover */
+.careers-hero .container,
+.careers-hero .hero-split,
+.careers-hero .hero-split-text,
+.careers-hero .hero-split-actions {
+  overflow: visible;
+}
+
+/* Extra padding gives shadow room so it doesn't get clipped by body overflow-x */
+.careers-hero .container {
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .careers-hero::before {
@@ -1242,8 +1324,15 @@ footer {
 .download-hero {
   padding-top: var(--nav-h);
   background: linear-gradient(160deg, #fafffe 0%, #eff6ff 40%, #dbeafe 80%, #bfdbfe 100%);
-  overflow: hidden;
+  overflow: visible;
   position: relative;
+}
+
+/* Let phone shadow flow freely - no clipping on right */
+.download-hero .container,
+.download-hero .hero-split,
+.download-hero .hero-split-visual {
+  overflow: visible;
 }
 
 .download-hero::before {
@@ -1486,6 +1575,45 @@ footer {
     order: -1;
   }
 
+  /* About page: center Our Story badge with rest of content when layout is single-column */
+  .about-hero .hero-split-text {
+    align-items: center;
+    text-align: center;
+  }
+  .about-hero .badge {
+    align-self: center;
+  }
+
+  /* Download page: center badge and star rating on medium screens when layout is single-column */
+  .download-hero .hero-split-text {
+    align-items: center;
+    text-align: center;
+  }
+  .download-hero .badge {
+    align-self: center;
+  }
+  .download-hero .hero-split-text .download-rating {
+    justify-content: center;
+  }
+
+  /* About page: AI Feature & Mission sections — single column, text first, reduced gaps */
+  .ai-feature-grid,
+  .mission-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+  .ai-feature-grid > div:first-child { order: 2; }
+  .ai-feature-grid .ai-feature-content { order: 1; text-align: center; }
+  .ai-feature-content .section-label,
+  .ai-feature-content .section-title,
+  .mission-grid > div:first-child .section-label,
+  .mission-grid > div:first-child .section-title { text-align: center; }
+  .ai-feature-pills { justify-content: center; flex-wrap: wrap; }
+  .ai-feature-section .ai-img { max-width: 280px; margin: 0 auto; }
+  .mission-grid .mission-visual { justify-content: center; }
+  .mission-grid .illus-box { max-width: 320px; margin: 0 auto; }
+
   .hero-card-1, .hero-card-2 {
     display: none;
   }
@@ -1513,6 +1641,18 @@ footer {
 
   .platform-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Download page: center badge and star rating on medium screens when layout is single-column */
+  .download-hero .hero-split-text {
+    align-items: center;
+    text-align: center;
+  }
+  .download-hero .badge {
+    align-self: center;
+  }
+  .download-hero .hero-split-text .download-rating {
+    justify-content: center;
   }
 }
 
@@ -1582,10 +1722,81 @@ footer {
 
   .hero-split {
     min-height: auto;
+    padding: 32px 24px 40px;
   }
 
-  .hero-split-visual {
+  /* Download page: ensure top section fully visible, text first, adequate spacing */
+  .download-hero.page-top {
+    padding-top: calc(var(--nav-h) + 16px);
+  }
+
+  .download-hero .hero-split {
+    padding-top: 24px;
+    padding-bottom: 32px;
+  }
+
+  .download-hero .hero-split-text {
     order: -1;
+    align-items: center;
+    text-align: center;
+  }
+
+  .download-hero .hero-split-visual {
+    order: 1;
+  }
+
+  /* Center star rating row on mobile */
+  .download-hero .hero-split-text .download-rating {
+    justify-content: center;
+  }
+
+  /* Download page: phones always in row - right one crops at viewport edge on small screens */
+
+  /* About page: AI & Mission — tighter spacing for tablets and mobile */
+  .ai-feature-grid,
+  .mission-grid {
+    gap: 36px;
+  }
+  .ai-feature-section .ai-img {
+    max-width: 260px;
+  }
+  .mission-grid .illus-box {
+    max-width: 280px;
+  }
+  .mission-grid .mission-visual > div {
+    display: flex;
+    justify-content: center;
+  }
+  /* Mission stats row — stack on mobile */
+  .mission-grid .mission-stats {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  /* About page: AI & Mission — compact for small phones */
+  .ai-feature-grid,
+  .mission-grid {
+    gap: 28px;
+  }
+  .ai-feature-section .ai-img {
+    max-width: 220px;
+  }
+  .mission-grid .illus-box {
+    max-width: 240px;
+  }
+  .ai-feature-content p,
+  .mission-grid > div:first-child p {
+    font-size: 0.9375rem !important;
+  }
+  .ai-feature-pills {
+    gap: 8px;
+  }
+  .ai-pill {
+    padding: 10px 14px;
+    font-size: 0.875rem;
   }
 }
 
@@ -1699,11 +1910,22 @@ body{
   from{opacity:0;transform:translateY(20px);}
   to{opacity:1;}
 }
-::-webkit-scrollbar{
-  width:8px;
+/* Hide scrollbars on all nested areas - only the main page shows a scrollbar */
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
-::-webkit-scrollbar-thumb{
+/* Apply custom scrollbar only to the root (html/body) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: block;
+  width: 8px;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb{
   background:#22c55e;
   border-radius:20px;
 }

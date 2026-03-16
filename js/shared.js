@@ -46,14 +46,7 @@
       });
     });
 
-    var grid = document.getElementById('appFeatGrid');
-    if (grid) {
-      function handleResize() {
-        grid.style.gridTemplateColumns = window.innerWidth <= 1024 ? '1fr' : '1fr 1fr';
-      }
-      handleResize();
-      window.addEventListener('resize', handleResize);
-    }
+    /* appFeatGrid layout now handled by CSS media queries */
   }
 
   function init() {

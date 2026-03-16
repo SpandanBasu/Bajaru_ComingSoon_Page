@@ -5,15 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Download — Bajaru App | iOS & Android</title>
   <meta name="description" content="Download the Bajaru app on iOS or Android and start ordering farm-fresh vegetables delivered to your door in under 24 hours." />
-  <link rel="icon" type="image/png" href="./images/favicon.ico"/>
+  <meta name="keywords" content="Bajaru app download, Bajaru Android, Bajaru iOS, Bajaru app" />
+  <meta name="author" content="Bajaru" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bajaru.co.in/download.html" />
+  <meta property="og:title" content="Download — Bajaru App | iOS & Android" />
+  <meta property="og:description" content="Download the Bajaru app on iOS or Android and start ordering farm-fresh vegetables delivered to your door in under 24 hours." />
+  <meta property="og:url" content="https://bajaru.co.in/download.html" />
+  <meta property="og:image" content="https://bajaru.co.in/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Bajaru" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Download — Bajaru App | iOS & Android" />
+  <meta name="twitter:description" content="Download the Bajaru app on iOS or Android and start ordering farm-fresh vegetables delivered to your door in under 24 hours." />
+  <meta name="twitter:image" content="https://bajaru.co.in/images/og-image.png" />
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./css/buttons.css" />
 
   <style>
     /* Download-page specific overrides */
-    .download-hero { padding-top: var(--nav-h); background: linear-gradient(160deg, #fafffe 0%, #eff6ff 40%, #dbeafe 80%, #bfdbfe 100%); overflow: hidden; position: relative; }
+    .download-hero { padding-top: var(--nav-h); background: linear-gradient(160deg, #fafffe 0%, #eff6ff 40%, #dbeafe 80%, #bfdbfe 100%); overflow: visible; position: relative; }
     .download-hero::before { content:''; position:absolute; top:-100px; right:-100px; width:600px; height:600px; background:radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%); pointer-events:none; }
-    .phone-wrap { display:flex; justify-content:center; align-items:center; gap:24px; }
+    .phone-wrap { display:flex; justify-content:center; align-items:center; gap:24px; flex-wrap:nowrap; flex-direction:row; }
     .reviews-section { background:var(--gray-50); }
     .reviews-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:48px; }
     .review-card { background:var(--white); border:1px solid var(--gray-100); border-radius:var(--radius-lg); padding:28px; }
@@ -32,8 +49,57 @@
     .faq-a { max-height:0; overflow:hidden; transition:max-height 0.3s ease; }
     .faq-item.open .faq-a { max-height:200px; }
     .faq-a p { padding:0 24px 20px; font-size:0.9375rem; color:var(--gray-500); line-height:1.7; }
-    @media(max-width:768px){ .reviews-grid{ grid-template-columns:1fr; } }
+    @media(max-width:768px){
+      .reviews-grid{ grid-template-columns:1fr; }
+      .download-hero .hero-split-text{ align-items:center; text-align:center; }
+      .download-hero .badge{ align-self:center; }
+      .download-hero .download-rating{ justify-content:center; }
+      /* Phones stay in row - right one cropped by viewport; allow shadow to flow */
+      .download-hero .container{ overflow:visible; }
+      .download-hero .hero-split{ overflow:visible; }
+      .download-hero .hero-split-visual{ overflow:visible; }
+    }
+    /* App Features section - responsive restructure for smaller screens */
+    .app-feat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .app-feat-grid .app-feat-list { display:flex; flex-direction:column; gap:24px; margin-top:32px; }
+    .app-feat-grid .app-feat-item { display:flex; gap:16px; align-items:flex-start; }
+    .app-feat-grid .app-feat-item .feature-icon { margin-bottom:0; flex-shrink:0; }
+    .app-feat-grid .app-feat-item h4 { margin-bottom:4px; }
+    .app-feat-grid .app-feat-item p { font-size:0.9375rem; }
+    @media(max-width:1024px){
+      .app-feat-grid { grid-template-columns:1fr; gap:48px; text-align:center; }
+      .app-feat-grid > div:first-child { order:1; }
+      .app-feat-grid > div:last-child { order:2; }
+      .app-feat-grid .app-feat-list { align-items:center; gap:20px; }
+      .app-feat-grid .app-feat-item { flex-direction:column; align-items:center; text-align:center; gap:12px; }
+      .app-features-section .illus-box { max-width:320px; margin:0 auto; }
+    }
+    @media(max-width:768px){
+      .app-feat-grid { gap:36px; }
+      .app-feat-grid .app-feat-list { gap:20px; margin-top:24px; }
+      .app-feat-grid .app-feat-item { gap:10px; }
+      .app-features-section .feature-icon { width:44px; height:44px; font-size:1.25rem; }
+      .app-features-section .illus-box { max-width:280px; }
+    }
+    @media(max-width:480px){
+      .app-feat-grid { gap:28px; }
+      .app-feat-grid .app-feat-list { gap:16px; margin-top:20px; }
+      .app-features-section .feature-icon { width:40px; height:40px; font-size:1.1rem; }
+      .app-features-section .illus-box { max-width:240px; aspect-ratio:4/3; }
+      .app-feat-grid .app-feat-item p { font-size:0.875rem; }
+    }
   </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Bajaru","url":"https://bajaru.co.in","logo":"https://bajaru.co.in/images/app-icon.png","description":"Farm fresh vegetables delivered from local farms to your door. AI-powered voice ordering. Launching in Sodepur.","sameAs":["https://www.linkedin.com/company/bajaru/"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the app free to download?","acceptedAnswer":{"@type":"Answer","text":"Yes, the Bajaru app is completely free to download on both the App Store and Google Play. You only pay for your vegetable orders and delivery."}},{"@type":"Question","name":"How quickly is my order delivered?","acceptedAnswer":{"@type":"Answer","text":"We guarantee next-day delivery after placing your order."}},{"@type":"Question","name":"What cities do you currently serve?","acceptedAnswer":{"@type":"Answer","text":"We will be start serving in Sodepur(Kolkata). More cities will be launching soon."}},{"@type":"Question","name":"Can I set up recurring orders?","acceptedAnswer":{"@type":"Answer","text":"Absolutely! Our subscription feature lets you set up weekly or bi-weekly boxes. You can customize what you receive, pause at any time, and skip deliveries when you're travelling."}},{"@type":"Question","name":"What if I'm not happy with my order?","acceptedAnswer":{"@type":"Answer","text":"We have a no-questions-asked freshness guarantee. If anything isn't up to standard, message us in the app within 24 hours and we'll either replace it or issue a full refund."}}]}
+  </script>
 </head>
 <body>
 
@@ -41,6 +107,7 @@
   <div id="navbar-placeholder"></div>
   <div id="mobile-menu-placeholder"></div>
 
+  <main>
   <!-- ── DOWNLOAD HERO ── -->
   <section class="download-hero page-top">
     <div class="container">
@@ -92,7 +159,7 @@
           </div>
 
 
-          <div style="display:flex; align-items:center; gap:10px; margin-top:16px; color:var(--gray-400); font-size:0.875rem;">
+          <div class="download-rating" style="display:flex; align-items:center; gap:10px; margin-top:16px; color:var(--gray-400); font-size:0.875rem;">
             <span style="color:#f59e0b;">★★★★★</span>
             <strong style="color:var(--gray-700);">4.9</strong>
             <span>from reviews</span>
@@ -167,35 +234,35 @@
   </section>
 
   <!-- ── APP FEATURES ── -->
-  <section>
+  <section class="app-features-section">
     <div class="container">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;" class="reveal" id="appFeatGrid">
+      <div class="app-feat-grid reveal" id="appFeatGrid">
         <div>
           <span class="section-label">App Features</span>
           <h2 class="section-title">Built for how you actually cook</h2>
-          <div style="display:flex; flex-direction:column; gap:24px; margin-top:32px;">
-            <div style="display:flex; gap:16px; align-items:flex-start;">
+          <div class="app-feat-list">
+            <div class="app-feat-item">
               <div class="feature-icon" style="margin-bottom:0; flex-shrink:0;">📅</div>
               <div>
                 <h4 style="margin-bottom:4px;">Smart subscriptions</h4>
                 <p style="font-size:0.9375rem;">Set weekly or bi-weekly boxes based on your household size. Pause, skip, or swap any time.</p>
               </div>
             </div>
-            <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div class="app-feat-item">
               <div class="feature-icon" style="margin-bottom:0; flex-shrink:0;">📍</div>
               <div>
                 <h4 style="margin-bottom:4px;">Live tracking</h4>
                 <p style="font-size:0.9375rem;">Track your delivery on a live map from the moment it leaves the farm until it's at your door.</p>
               </div>
             </div>
-            <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div class="app-feat-item">
               <div class="feature-icon" style="margin-bottom:0; flex-shrink:0;">🤖</div>
               <div>
                 <h4 style="margin-bottom:4px;">AI-powered zero-tap ordering</h4>
                 <p style="font-size:0.9375rem;">Simply speak your order and Bajaru does the rest. Our AI understands your voice, adds items to cart, checks prices, and places the order automatically.</p>
               </div>
             </div>
-            <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div class="app-feat-item">
               <div class="feature-icon" style="margin-bottom:0; flex-shrink:0;">🍽️</div>
               <div>
                 <h4 style="margin-bottom:4px;">Handpicked vegetables</h4>
@@ -204,11 +271,11 @@
             </div>
           </div>
         </div>
-        <div style="display:flex; justify-content:center;">
-          <div class="illus-box illus-box-blue" style="font-size:4.5rem;">
+        <div class="app-feat-visual">
+          <div class="illus-box illus-box-blue app-feat-image">
             <img
               src="./images/handpick org.png"
-              alt="Fresh colourful vegetables arranged beautifully"
+              alt="Bajaru handpicked fresh vegetables from local farms"
               style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"
               loading="lazy"
             />
@@ -315,6 +382,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ── FOOTER (loaded from components) ── -->
   <div id="footer-placeholder"></div>
