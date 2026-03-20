@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Policies — Bajaru | Refund, Return & Shipping</title>
+  <meta name="description" content="View Bajaru's refund, return, and shipping policies. Download the complete policies PDF for official use.">
+  <link rel="icon" href="./images/favicon.ico">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./css/buttons.css">
+  <style>
+    .policies-page { padding-top: calc(var(--nav-h) + 40px); padding-bottom: 80px; }
+    .policies-header { text-align: center; margin-bottom: 48px; }
+    .policies-header h1 { font-size: clamp(1.75rem, 3vw, 2.5rem); margin-bottom: 12px; }
+    .policies-header p { color: var(--gray-500); max-width: 480px; margin: 0 auto; }
+    .policies-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
+    .policy-card { background: var(--white); border: 1px solid var(--gray-100); border-radius: var(--radius-lg); padding: 28px; transition: all 0.25s ease; }
+    .policy-card:hover { border-color: var(--green-200); box-shadow: var(--shadow-md); }
+    .policy-card h3 { font-size: 1.125rem; margin-bottom: 8px; }
+    .policy-card p { font-size: 0.9375rem; color: var(--gray-500); line-height: 1.6; margin-bottom: 20px; }
+    .policy-card .btn { width: 100%; justify-content: center; }
+    .policies-pdf { text-align: center; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--gray-100); }
+    .policies-pdf .btn { display: inline-flex; align-items: center; gap: 10px; }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+  <div id="mobile-menu-placeholder"></div>
+
+  <main>
+    <section class="policies-page">
+      <div class="container">
+        <div class="policies-header">
+          <h1>Our Policies</h1>
+          <p>Refund, return, and shipping policies for Bajaru. Share these links with official sites or download the complete PDF.</p>
+        </div>
+        <div class="policies-grid">
+          <div class="policy-card">
+            <h3>Refund & Cancellation</h3>
+            <p>How to cancel orders and request refunds. Covers perishables, damaged items, and refund processing timelines.</p>
+            <a href="./refund-policy.html" class="btn btn-outline btn-sm">View policy →</a>
+          </div>
+          <div class="policy-card">
+            <h3>Return Policy</h3>
+            <p>Eligibility for returns and exchanges. Conditions, exempted categories, and processing steps.</p>
+            <a href="./return-policy.html" class="btn btn-outline btn-sm">View policy →</a>
+          </div>
+          <div class="policy-card">
+            <h3>Shipping Policy</h3>
+            <p>Delivery methods, timelines, and confirmation. Shipping costs and liability information.</p>
+            <a href="./shipping-policy.html" class="btn btn-outline btn-sm">View policy →</a>
+          </div>
+        </div>
+        <div class="policies-pdf">
+          <a href="./policies/Policies.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            📄 Download all policies (PDF)
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="./js/components.js"></script>
+  <script src="./js/shared.js"></script>
+</body>
+</html>
