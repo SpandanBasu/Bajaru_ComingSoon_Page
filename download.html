@@ -94,6 +94,45 @@
       .app-features-section .illus-box { max-width:240px; aspect-ratio:4/3; }
       .app-feat-grid .app-feat-item p { font-size:0.875rem; }
     }
+    /* Coming Soon badge — inline (platform cards) */
+    .coming-soon-badge {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      color: #92400e;
+      font-size: 0.5875rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border: 1px solid #fcd34d;
+      white-space: nowrap;
+      vertical-align: middle;
+      margin-left: 7px;
+      position: relative;
+      top: -1px;
+    }
+    /* Coming Soon badge — overlay on hero store cards */
+    .store-badge-wrap { position: relative; display: inline-block; }
+    .store-badge-wrap .badge-overlay {
+      position: absolute;
+      top: -9px;
+      right: -9px;
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      color: #fff;
+      font-size: 0.5625rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      border: 2px solid #fff;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.18);
+      z-index: 2;
+      pointer-events: none;
+    }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"Bajaru","url":"https://bajaru.co.in","logo":"https://bajaru.co.in/images/app-icon.png","description":"Farm fresh vegetables delivered from local farms to your door. AI-powered voice ordering. Launching in Sodepur.","sameAs":["https://www.linkedin.com/company/bajaru/"]}
@@ -121,7 +160,7 @@
             one tap away
           </h1>
           <p class="desc">
-            Download Bajaru and unlock access to 500+ seasonal vegetables from 200+ local farms. Set up weekly subscriptions, track deliveries live, and never worry about meal planning again.
+            Download Bajaru and unlock access to 500+ seasonal vegetables from 200+ local farms. Freshly procured same day. No dark storage no Inventories. Set up weekly subscriptions, and never worry about meal planning again.
           </p>
           <!-- <div id="download-links" class="store-badges">
             <a href="#" class="store-badge">
@@ -141,13 +180,16 @@
           </div> -->
             <div class="store-badges">
 
-            <a href="https://www.linkedin.com/company/bajaru/" target="_blank" rel="noopener noreferrer" class="store-badge-card">
-              <img src="./images/Apple_logo_black.svg" class="store-logo" alt="Apple">
-              <div class="store-text">
-                <small>Download on the</small>
-                <strong>App Store</strong>
-              </div>
-            </a>
+            <div class="store-badge-wrap">
+              <span class="badge-overlay">Coming Soon</span>
+              <a href="https://www.linkedin.com/company/bajaru/" target="_blank" rel="noopener noreferrer" class="store-badge-card">
+                <img src="./images/Apple_logo_black.svg" class="store-logo" alt="Apple">
+                <div class="store-text">
+                  <small>Download on the</small>
+                  <strong>App Store</strong>
+                </div>
+              </a>
+            </div>
 
             <a href="https://play.google.com/store/apps/details?id=com.bajaru.bajaru" target="_blank" rel="noopener noreferrer" class="store-badge-card">
               <img src="./images/Google_Play_Arrow_logo.svg" class="store-logo" alt="Google Play">
@@ -208,7 +250,7 @@
           <div class="icon">
             <img src="./images/Apple_logo_black.svg" class="platform-logo" alt="Apple">
           </div>
-          <h4>iPhone &amp; iPad</h4>
+          <h4>iPhone &amp; iPad <span class="coming-soon-badge">Coming Soon</span></h4>
           <p>Native iOS app with Live Activities and Apple Pay support.</p>
           <a href="https://www.linkedin.com/company/bajaru/" target="_blank" rel="noopener noreferrer" class="btn-download btn-sm">
             <span class="btn-download-icon">⬇</span> App Store
@@ -226,7 +268,7 @@
         </div>
         <div class="platform-card reveal reveal-delay-3">
           <div class="icon">🌐</div>
-          <h4>Web App</h4>
+          <h4>Web App <span class="coming-soon-badge">Coming Soon</span></h4>
           <p>Order directly from your browser — no download required.</p>
           <a href="https://www.linkedin.com/company/bajaru/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Open web app →</a>
         </div>
