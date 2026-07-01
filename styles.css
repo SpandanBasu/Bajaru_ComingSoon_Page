@@ -1153,6 +1153,14 @@ footer {
   margin-top: 56px;
 }
 
+/* Centered layout for a two-member team */
+.team-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .team-card {
   text-align: center;
   border-radius: var(--radius-lg);
